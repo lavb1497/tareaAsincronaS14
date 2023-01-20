@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-6 mx-auto">
+      <h1 class="text-center" style="color: rgb(17, 93, 199);">Registro de Personas</h1>
+      <div *ngIf="registroExitoso">
+        <app-hijo [personHijo]="person | json"></app-hijo>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><strong>Nombre:</strong></label>
+        <input type="text" class="form-control" [(ngModel)]="person.nombre" placeholder="Miguel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><strong>DNI:</strong></label>
+        <input type="number" class="form-control" [(ngModel)]="person.dni" placeholder="12345678">
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><strong>Estado Civil:</strong></label>
+        <select [(ngModel)]="person.estadoCivil" class="form-select" aria-label="Default select example">
+          <option value=" Soltero">Soltero</option>
+          <option value=" Casado">Casado</option>
+          <option value=" Divorciado">Divorciado</option>
+          <option value=" Viudo">Viudo</option>
+        </select>
+      </div>
+      <div class="text-center">
+        <button (click)="mostrarRegistro()" type="button" class="btn btn-outline-success">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
